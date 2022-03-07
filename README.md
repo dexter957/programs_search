@@ -1,5 +1,5 @@
 # programs_search
-##script that searches for installed programs
+## script that searches for installed programs
 
 
 Sometimes I install programs and I may forget about them ... and I believe it can happen to anyone
