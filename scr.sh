@@ -42,24 +42,21 @@ fi
 
 #Get the distro
 OS=$(getDistro)
-echo "The os is ${OS}"
 
 #Get the command
 COMMAND=$(getCommand $OS)
-#echo "The command to run is ${COMMAND}"
 
 #Now issue the appropriate for your distro command, to list your installed programs
 echo "Programs like \"${1}\": "
 if [ "$COMMAND" ]; then
   #First list official packages:
-  #echo "In official packages:"
   eval "$COMMAND | grep $1"
 fi
 
 
 #Now we attempt searching user files:
 #/usr/bin
-#echo "In user installation paths"
 USR_PATH="/usr/local/bin"
-#echo "Possible user path:${USR_PATH}"
 find "$USR_PATH" -type f -executable | grep "$1"
+
+
